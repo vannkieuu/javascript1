@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <form name="frm">
+        <p>
+            <label>
+                Product Name:
+                <input type="text" name="pro" id="pro" />
+            </label>
+            <label>
+                Product Picture:
+                <input type="file" name="image" id="image" accept="image/*" />
+            </label>
+            <label>
+                Product price:
+                <input type="number" name="pri" id="pri" />
+            </label>
+        </p>
+    </form>
+    <button type="button" onclick="add()">ADD</button>
+    <div>
+        <h2>PRODUCT</h2>
+        <ul id="cart"></ul>
+    </div>
+    <script type="text/javascript">
+        function add() {
+            var image = document.getElementById("image").files[0];
+            var pro = document.getElementById("pro").value;
+            var pri = document.getElementById("pri").value;
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var imgSrc = e.target.result;
+
+                // Hiển thị hình ảnh và thông tin sản phẩm
+                var cartItem = document.createElement('li');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src='${imgSrc}' alt='Product Image' />
+                    <div>
+                        <p><strong>Product : ${pro}</strong></p>
+                        <p>Price: ${pri}</p>
+                    </div>
+                `;
+
+                document.getElementById("cart").appendChild(cartItem);
+            };
+
+            reader.readAsDataURL(image);
+        }
+
+    </script>
+    <button type="button1" onclick="datmua()">BUY</button>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+       #cart {
+           list-style-type: none;
+           padding: 0;
+       }
+
+       .cart-item {
+           border: 1px solid #ddd;
+           margin-bottom: 10px;
+           padding: 10px;
+       }
+
+       .cart-item img {
+           width: 446px;
+           height: auto;
+           margin-right: 10px;
+       }
+
+       form input {
+           width: 100%;
+           padding: 12px;
+           margin-bottom: 20px;
+           box-sizing: border-box;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           background-color: #f8f8f8;
+           color: #333;
+       }
+
+       button {
+           display: block;
+           padding: 12px;
+           background-color: #0847c6;
+           color: white;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
